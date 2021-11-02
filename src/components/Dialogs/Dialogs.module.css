@@ -1,0 +1,59 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: rgb(104, 104, 104);
+
+}
+
+.dialogItems{
+    padding: 16px;
+    margin: 0;
+    list-style: none;
+    min-width: 200px;
+}
+
+.dialog a{
+    list-style: none;
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+    padding: 8px 0;
+    display: inline-block;
+    min-width: 168px;
+}
+
+
+
+.dialog a.active{
+    color: rgb(12, 25, 37);
+}
+
+
+.messages{
+    padding: 16px;
+    background-color: rgb(43, 47, 51);
+    color: #e2e2e2;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+
+    display: grid;
+    grid-template-rows: 5fr 60px;
+}
+
+.message{
+    margin: 6px 0;
+    padding: 6px 8px;
+    background-color: rgb(52, 81, 110);
+    border-radius: 10px;
+}
+
+.messageItems{
+    padding: 0;
+    list-style: none;
+}
+
+
+.messageSend{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
