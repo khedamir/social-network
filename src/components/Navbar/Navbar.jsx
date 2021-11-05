@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css'
 
 function Navbar(props){
-    let friends = props.store.getState().sidebar.friends
-    let friendsElement = friends.map(
-        (f)=> (<li className={s.friendItem}><a href=""><div className = {s.friendsAva}></div>{f.name}</a></li>))
+    // let friends = props.store.getState().sidebar.friends
+    // let friendsElement = friends.map(
+    //     (f)=> (<li className={s.friendItem}><a href=""><div className = {s.friendsAva}></div>{f.name}</a></li>))
 
     return (
         <nav className={s.nav}>
@@ -16,12 +16,12 @@ function Navbar(props){
                 <li className={`${s.navItem} ${s.navItemSettings}`}><a href="">Settings</a></li>
             </ul>
 
-            <div className={s.friends}>
+            {/* <div className={s.friends}>
                 <h4>Friends</h4>
                 <ul className={s.friendsItems}>
                     {friendsElement}
                 </ul>
-            </div>
+            </div> */}
         </nav>
     );
 }

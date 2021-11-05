@@ -13,22 +13,13 @@ function App(props) {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar store = {props.store}/>
+        <Navbar/>
 
         <div className='app-wrapper__content'>
 
-          <Route path = '/profile' render={()=> 
-            <Profile store = {props.store}
-              // profilePage = {props.state.profilePage} 
-              // dispatch = {props.dispatch}
-              />} />
+          <Route path = '/profile' render={()=><Profile/>} />
 
-          <Route path = '/dialogs' render={()=> 
-            <DialogsContainer
-              store = {props.store}
-              // dialogsPage = {props.state.dialogsPage} 
-              // dispatch = {props.dispatch}
-              />} />
+          <Route path = '/dialogs' render={()=><DialogsContainer/>} />
 
         </div>
 

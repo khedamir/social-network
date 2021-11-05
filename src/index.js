@@ -3,27 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/redux-store'
+import store from './redux/redux-store';
+import {Provider} from './StoreContext';
 
 
 
-let rerenderEntireThree = (state) => {
+let rerenderEntireThree = () => {
   ReactDOM.render(
     <React.StrictMode>
-
-    <App store = {store}
-      // state = {state}
-      // dispatch = {store.dispatch.bind(store)}
-      />
+      <Provider store = {store}>
+        <App />
+      </Provider>
     </React.StrictMode>,
     document.getElementById('root')
   );
-  
-} 
-rerenderEntireThree(store.getState())
+
+}
+rerenderEntireThree()
 
 store.subscribe(() => {
-  rerenderEntireThree(store.getState())
+  rerenderEntireThree()
 })
 
 
