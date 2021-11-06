@@ -5,7 +5,7 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 
 function MyPosts(props) {
     let posts = props.profilePage.posts;
-    let postsElements = posts.map(p => (<Post message={p.message} like={p.likes} />));
+    let postsElements = posts.map(p => (<Post message={p.message} like={p.likes}  key = {p.id}/>));
     postsElements.reverse();
 
 
