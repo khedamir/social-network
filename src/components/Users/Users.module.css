@@ -1,0 +1,27 @@
+.userProfile{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    margin: 12px 0;
+
+}
+
+.followedBtn{
+    width: 150px;
+    height: 30px;
+    color: #fff;
+    background-color: rgb(52, 81, 110);
+    border: none;
+}
+
+
+.profileDescription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.profilePhoto{
+    width: 150px;
+    display: block;
+}
