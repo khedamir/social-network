@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Users.module.css";
 import userPhoto from '../../assets/images/user.png'
+import Preloader from "../common/Preloader/Preloader";
 
 
 const Users = (props) => {
@@ -18,7 +19,7 @@ const Users = (props) => {
     return (
         <div>
             <h1>Users</h1>
-
+            
             <div className={s.pageNumbers}>
                 {pages.map((p) => {
                     return <span onClick={() => props.onPageChanged(p)}
@@ -27,8 +28,8 @@ const Users = (props) => {
 
             </div>
 
-
-            {props.users.map((u) => <div key={u.id} className={s.userProfile}>
+            <div>{props.isFetching ? <Preloader /> : 
+            props.users.map((u) => <div key={u.id} className={s.userProfile}>
                 <div className={s.userProfilePhoto}>
                     {u.photos.large ?
                         <img src={u.photos.small} alt="" className={s.profilePhoto} /> :
@@ -49,7 +50,10 @@ const Users = (props) => {
 
                     </div>
                 </div>
-            </div>)}
+            </div>)
+            }</div>
+
+            
         </div>
     )
 }
