@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 150px 1fr;
     margin: 12px 0;
+    text-decoration: none;
+    color: rgb(39, 39, 39);
 
 }
 
@@ -13,6 +15,12 @@
     border: none;
 }
 
+.followedBtn:hover,
+.followedBtn:active{
+    color: rgb(52, 81, 110);
+    background-color: #fff;
+    border: 1px solid rgb(52, 81, 110);
+}
 
 .profileDescription{
     display: flex;
@@ -45,4 +53,12 @@
 
 
 
+
+.preloader{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 

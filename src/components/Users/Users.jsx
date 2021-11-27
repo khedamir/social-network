@@ -2,6 +2,8 @@ import React from "react";
 import s from "./Users.module.css";
 import userPhoto from '../../assets/images/user.png'
 import Preloader from "../common/Preloader/Preloader";
+import { NavLink } from 'react-router-dom';
+
 
 
 const Users = (props) => {
@@ -17,7 +19,7 @@ const Users = (props) => {
 
 
     return (
-        <div>
+        <div className = {s.users}>
             <h1>Users</h1>
             
             <div className={s.pageNumbers}>
@@ -27,13 +29,14 @@ const Users = (props) => {
                 })}
 
             </div>
+            
 
-            <div>{props.isFetching ? <Preloader /> : 
+            <div>{props.isFetching ?<div className={s.preloader}><Preloader /></div>  : 
             props.users.map((u) => <div key={u.id} className={s.userProfile}>
                 <div className={s.userProfilePhoto}>
                     {u.photos.large ?
-                        <img src={u.photos.small} alt="" className={s.profilePhoto} /> :
-                        <img src={userPhoto} alt="" className={s.profilePhoto} />}
+                        <NavLink to = {'./profile/' + u.id}><img src={u.photos.small} alt="" className={s.profilePhoto} /></NavLink> :
+                        <NavLink to = {'./profile/' + u.id}><img src={userPhoto} alt="" className={s.profilePhoto} /></NavLink>}
 
                     {u.followed ?
                         <button className={s.followedBtn} onClick={() => { props.unFollow(u.id) }}>Unfollow</button> :
